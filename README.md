@@ -54,9 +54,11 @@ I start by preparing "object points", which will be the (x, y, z) coordinates of
 I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function.
 
 **Here is an image before distortion correction:**
+
 <img src="./camera_cal/calibration1.jpg" width="427" height="240" />
 
 **Here is that same image after distortion correction**
+
 <img src="./camera_cal_results/calibration1_undist.jpg" width="427" height="240" />
 
 ### Process (single images)
@@ -92,6 +94,7 @@ I then verified that my perspective transform was working as expected by perform
 The next step was to identify which pixels in the image are the lane lines.  Since the lane lines are either white or yellow, I extracted only these two colors using the function `pull_yellow_white()`.  First I converted a copy of the image into HSV color space.  Here is a representation of HSV color space courtesy of https://en.wikipedia.org/wiki/HSL_and_HSV (accessed 6/2/20):
 
 ![alt text][image4]
+
 To extract the yellow pixels, I identified the pixels with values within these limits:
 ```python
 yellow_lower = np.array([15, 70, 70])  #[Hue,Saturation,Value]
