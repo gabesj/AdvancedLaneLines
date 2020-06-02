@@ -243,6 +243,7 @@ This code does a reasonable job of smoothing over or rejecting outliers, but if 
 
 This code only works well when the curves are gradual enough that they stay inside the defined region of interest.  If needed, the region of interest could be redefined to accomodate sharper curves.
 
+This code assumes the lanes follow a 2nd degree polynomial, which may not be the most accurate in all curves.
 
 ### Acknowledgement
 
